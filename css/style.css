@@ -1,0 +1,39 @@
+body {
+/* JD */
+/* --slide-bgcolor: #DDCCCC;
+    --video-bgcolor: #E490E0;
+
+    --manu-bgcolor: #FFFFFF;
+    --tech-bgcolor: #F1F1D6;
+    --diss-bgcolor: #ADE4AD;
+    --unco-bgcolor: #EEEEFF;
+    --conf-bgcolor: #E0E0FF;
+    --jour-bgcolor: #B8E0F0;
+    --unkn-bgcolor: #EBE0E0; */
+  --color-jp-kuro: #080808;
+  --color-cn-YINYUBAI: #cdd1d3;
+  --color-cn-DIAOYEZONG: #e7a23f;
+  --color-cn-DANYINGSUHONG: #eea08c;
+  --color-cn-KONGQUELV: #229453;
+  --color-cn-YUQINLAN: #126e82;
+  --color-cn-HAIQING: #22a2c3;
+  --color-cn-BAOSHILAN: #2486b9;
+  --color-cn-HONGLAN: #2177b8;
+  --diss-bgcolor: var(--color-cn-KONGQUELV);
+  --manu-bgcolor: var(--color-cn-DIAOYEZONG);
+  --tech-bgcolor: #f1f1d6;
+  --unco-bgcolor: #eef;
+  --conf-bgcolor: var(--color-cn-HAIQING);
+  --jour-bgcolor: var(--color-cn-YUQINLAN);
+  --unkn-bgcolor: #ebe0e0;
+}
+body {
+  min-height: 100%;
+  margin: 5px;
+  background-color: var(--color-jp-kuro);
+  color: var(--color-cn-YINYUBAI);
+}
+a:link,
+a:visited {
+  color: var(--color-cn-HONGLAN);
+}
