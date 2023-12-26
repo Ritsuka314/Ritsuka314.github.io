@@ -1,0 +1,31 @@
+@font-face {
+  font-family: 'astro';
+  src: url('/fonts/Astro.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'ASTOLOGY';
+  src: url('/fonts/ASTOLOGY ASTROLOGICAL TFB.ttf') format('truetype');
+}
+.datetime-now {
+  display: none;
+  font-family: 'Noto Serif TC', sans-serif;
+}
+div.datetime-now {
+  text-align: center;
+}
+table.datetime-now {
+
+}
+.month {
+  font-family: 'Noto Serif JP';
+}
+.zodiac {
+  font-family: 'Noto Serif JP';
+}
+.zodiac_logo, .youbi_logo {
+  font-family: 'astro';
+}
+.lunar_phase {
+  font-family: 'ASTOLOGY';
+  font-size: 10pt;
+}

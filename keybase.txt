@@ -1,0 +1,60 @@
+ritsuka
+Ritsuka
+Website https://ritsuka.moe/ ORCiD https://orcid.org/0000-0003-3713-5964
+Queen's University, Canada
+==================================================================
+https://keybase.io/ritsuka
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://ritsuka.moe
+  * I am ritsuka (https://keybase.io/ritsuka) on keybase.
+  * I have a public key ASBcc1gNIPGFbv-KfFngMxYTtvca__xnzRbbVT3cxihSowo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01205c73580d20f1856eff8a7c59e0331613b6f71afffc67cd16db553ddcc62852a30a",
+      "host": "keybase.io",
+      "kid": "01205c73580d20f1856eff8a7c59e0331613b6f71afffc67cd16db553ddcc62852a30a",
+      "uid": "510368324db935bc6cdb13fea11d3c19",
+      "username": "ritsuka"
+    },
+    "merkle_root": {
+      "ctime": 1673213560,
+      "hash": "b91e04eb1400fc728a9ee82c2be2c40dd03e1fbac3694331a39b52bd76dd0d9f258e917f0ccf29ab6a2df7f495c79eefc48336886a1c9cca5317858606cb029c",
+      "hash_meta": "d348d0724ff278439141c9ac20eb2d029706ef8c4e89623881ea44afa4d66169",
+      "seqno": 23833437
+    },
+    "service": {
+      "entropy": "L7v/cy+MP3Fb7I0bEipXhtIU",
+      "hostname": "ritsuka.moe",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "6.0.1"
+  },
+  "ctime": 1673213570,
+  "expire_in": 504576000,
+  "prev": "1def4d44135bf512e955cd3fe742f6a521d2ffb34ee52d041e9c2b67bc43f449",
+  "seqno": 11,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgXHNYDSDxhW7/inxZ4DMWE7b3Gv/8Z80W21U93MYoUqMKp3BheWxvYWTESpcCC8QgHe9NRBNb9RLpVc0/50L2pSHS/7NO5S0EHpwrZ7xD9EnEIJDU7QKc4ekZnI2dL3IjhOEDWSy/Cqw483/TZQLL5s1eAgHCo3NpZ8RAW81Ix7fuzkxB2BvAR0y9yR/LdQJML/9eJ9hkM4epena/45C3OYtR2zmqoT6liJx5sEvou0th6d2psAmCEz33DahzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEICdEq7BN60d7sqlBRVKt9InackGdirHoAsMQLggklZPHo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/ritsuka
+
+==================================================================

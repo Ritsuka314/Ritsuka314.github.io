@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+Disallow: /calendar.html
+Disallow: /pronoun.html
+Disallow: /quotes.json
+Disallow: /assets/
+Disallow: /css/
+Disallow: /fonts/
+Disallow: /js/
+
+Sitemap: https://ritsuka.moe/sitemap.xml

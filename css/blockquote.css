@@ -1,0 +1,41 @@
+blockquote {
+  margin: 1rem 10px;
+  padding: 0.5em 10px;
+  background: inherit;
+  color: var(--quote-color);
+  quotes: "\201C" "\201D" "\2018" "\2019";
+  font-weight: bold;
+  font-family: Georgia;
+}
+blockquote:lang(ch) {
+  font-family: "Noto Sans TC", "Noto Sans SC";
+}
+blockquote:lang(jp) {
+  font-family: "Noto Sans JP";
+}
+blockquote p {
+  margin: 0;
+}
+blockquote:before {
+  margin-right: 0.25em;
+  color: var(--quote-color);
+  content: "\201C";
+  vertical-align: -0.4em;
+  font-size: 2em;
+  line-height: 0.1em;
+}
+blockquote footer {
+  margin: line-height 0;
+  color: var(--meta-color);
+  font-size: 11px;
+}
+blockquote footer a {
+  color: var(--meta-color);
+}
+blockquote footer a:hover {
+  color: hsl(from var(--meta-color) h s calc(l - 5%));
+}
+blockquote footer cite:not(:empty):before {
+  padding: 0 0.5em;
+  content: "—";
+}
