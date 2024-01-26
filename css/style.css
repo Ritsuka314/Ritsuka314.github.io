@@ -79,7 +79,6 @@ html {
 body {
   font-family: Georgia, serif;
   font-size: 14pt;
-  min-height: 100%;
   margin: 5px;
   background-color: var(--background-color);
   color: var(--text-color);
