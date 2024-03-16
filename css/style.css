@@ -60,12 +60,14 @@ body {
   --color-cn-HAIQING: #22a2c3;
   --color-cn-BAOSHILAN: #2486b9;
   --color-cn-HONGLAN: #2177b8;
+  --color-cn-BOLINLAN: #126bae;
+  --color-arxiv: #8f1616;
   --diss-bgcolor: var(--color-cn-KONGQUELV);
-  --manu-bgcolor: var(--color-cn-DIAOYEZONG);
+  --manu-bgcolor: var(--text-color);
   --tech-bgcolor: #f1f1d6;
   --unco-bgcolor: #eef;
   --conf-bgcolor: var(--color-cn-HAIQING);
-  --jour-bgcolor: var(--color-cn-YUQINLAN);
+  --jour-bgcolor: var(--color-cn-BOLINLAN);
   --unkn-bgcolor: #ebe0e0;
   --background-color: var(--color-jp-kuro);
   --text-color: var(--color-cn-YINYUBAI);
