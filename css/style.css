@@ -1,0 +1,128 @@
+blockquote {
+  margin: 1rem 10px;
+  padding: 0.5em 10px;
+  background: inherit;
+  color: var(--quote-color);
+  quotes: "\201C" "\201D" "\2018" "\2019";
+  font-weight: bold;
+  font-family: Georgia;
+}
+blockquote:lang(ch) {
+  font-family: "Noto Sans TC", "Noto Sans SC";
+}
+blockquote:lang(jp) {
+  font-family: "Noto Sans JP";
+}
+blockquote p {
+  margin: 0;
+}
+blockquote:before {
+  margin-right: 0.25em;
+  color: var(--quote-color);
+  content: "\201C";
+  vertical-align: -0.4em;
+  font-size: 2em;
+  line-height: 0.1em;
+}
+blockquote footer {
+  margin: line-height 0;
+  color: var(--meta-color);
+  font-size: 11px;
+}
+blockquote footer a {
+  color: var(--meta-color);
+}
+blockquote footer a:hover {
+  color: hsl(from var(--meta-color) h s calc(l - 5%));
+}
+blockquote footer cite:not(:empty):before {
+  padding: 0 0.5em;
+  content: "—";
+}
+body {
+/* JD */
+/* --slide-bgcolor: #DDCCCC;
+    --video-bgcolor: #E490E0;
+
+    --manu-bgcolor: #FFFFFF;
+    --tech-bgcolor: #F1F1D6;
+    --diss-bgcolor: #ADE4AD;
+    --unco-bgcolor: #EEEEFF;
+    --conf-bgcolor: #E0E0FF;
+    --jour-bgcolor: #B8E0F0;
+    --unkn-bgcolor: #EBE0E0; */
+  --color-jp-kuro: #080808;
+  --color-cn-YINYUBAI: #cdd1d3;
+  --color-cn-DIAOYEZONG: #e7a23f;
+  --color-cn-DANYINGSUHONG: #eea08c;
+  --color-cn-KONGQUELV: #229453;
+  --color-cn-YUQINLAN: #126e82;
+  --color-cn-HAIQING: #22a2c3;
+  --color-cn-BAOSHILAN: #2486b9;
+  --color-cn-HONGLAN: #2177b8;
+  --color-cn-BOLINLAN: #126bae;
+  --color-arxiv: #8f1616;
+  --diss-bgcolor: var(--color-cn-KONGQUELV);
+  --manu-bgcolor: var(--text-color);
+  --tech-bgcolor: #f1f1d6;
+  --unco-bgcolor: #eef;
+  --conf-bgcolor: var(--color-cn-HAIQING);
+  --jour-bgcolor: var(--color-cn-BOLINLAN);
+  --unkn-bgcolor: #ebe0e0;
+  --background-color: var(--color-jp-kuro);
+  --text-color: var(--color-cn-YINYUBAI);
+  --link-color: var(--color-cn-HONGLAN);
+  --quote-color: var(--color-cn-KONGQUELV);
+  --meta-color: #666;
+}
+html {
+  line-height: 1.75em;
+}
+body {
+  font-family: Georgia, serif;
+  font-size: 14pt;
+  margin: 5px;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  hyphens: auto;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  text-align: justify;
+}
+#container {
+  width: 85vw;
+  max-width: 42rem;
+  margin: 0 auto;
+}
+h1 :lang(ch),
+h2 :lang(ch),
+h3 :lang(ch) {
+  font-family: 'Noto Sans TC';
+}
+h1,
+h2,
+h3 {
+  font-family: Open Sans, sans-serif;
+}
+p :lang(ch) {
+  font-family: 'Noto Sans TC';
+}
+p :lang(jp) {
+  font-family: 'Noto Sans JP';
+}
+p :lang(ru) {
+  font-family: 'Noto Serif';
+}
+p {
+  margin-bottom: 1.75rem;
+}
+a:link,
+a:visited {
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--link-color);
+}
+#footer hr {
+  margin-top: 3ex;
+}

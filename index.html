@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Ritsuka</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href='https://fonts.googleapis.com/css2?
+family=Noto+Sans+SC&
+family=Noto+Serif+SC&
+family=Noto+Sans+TC&
+family=Noto+Serif+TC&
+family=Noto+Serif+JP&
+family=Noto+Serif&
+display=swap' rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/microsoft-yahei" rel="stylesheet">
+  
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6BHPJFKCD7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-6BHPJFKCD7');
+</script>
+
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+<body lang="en">
+  <div id="container">
+    <div id="wrap">
+      
+      <div class="outer">
+        <section id="main"><script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<div style="display: none;">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
+</div>
+<style>
+  @font-face {
+    font-family: 'queens';
+    src: url('/fonts/QUEENS-R.TTF') format('truetype');
+  }
+  .queens {
+    font-family: 'queens',sans-serif;
+  }
+
+  #name {
+    display: block;
+    text-align: center;
+  }
+
+  pre {
+    text-align: left;
+    white-space: pre-wrap;       /* Since CSS 2.1 */
+    font-family: 'Space Mono', monospace;
+    font-size: 12pt;
+  }
+</style>
+<link href="/Datetime/Datetime.css" rel="stylesheet">
+<script type='module' src="/Datetime/Datetime.js" async></script>
+<div class="datetime-now">
+<span class="year" style="white-space: nowrap;"></span> <span
+class="month" style="white-space: nowrap;"></span> <span class="day"
+style="white-space: nowrap;"></span> <span style="white-space: nowrap;">
+<span class="youbi_logo"></span> <span class="youbi"></span> </span>
+<span style="white-space: nowrap;"> <span class="zodiac_logo"></span>
+<span class="zodiac"></span> </span> <span class="lunar_phase"
+style="white-space: nowrap;"></span> <span class="pentad"
+style="white-space: nowrap;"></span> <span style="white-space: nowrap;">
+<span class="time" style="white-space: nowrap;"></span>
+<sup><a href='calendar.html' style='text-decoration: underline; text-decoration-style: dotted;'>?</a></sup>
+</span>
+</nav>
+</div>
+<style>
+  #full, #dot {
+    display: inline-block;
+    hyphens: none;
+    overflow: clip visible;
+  }
+  #full {
+    max-width: 0%;
+    opacity: 0
+  }
+  #R {
+    background-color: var(--background-color);
+  }
+</style>
+<script>
+ $(document).ready(function() {
+    let full = $('#full');
+    let dot = $('#dot');
+    let show = {
+      'max-width': '100\%',
+      'opacity': 100};
+    let hide = {
+      'max-width': '0\%', 
+      'opacity': 0};
+    let opt = { duration: 500, queue: false };
+    var timer = undefined;
+    var lastX, lastY;
+    var release = function() {};
+    let name = $('#name');
+    function doToggle () {
+      if (name.is('.full')){
+        full.animate(hide, opt);
+        dot.animate(show, opt);
+        name.removeClass('full');
+      } else {
+        full.animate(show, opt);
+        dot.animate(hide, opt);
+        name.addClass('full');
+      }
+    }
+    name
+    .mousedown(e => {
+      if (e.which !== 1) return;
+      let waitRelease = new Promise((resolve) => {release = resolve})
+      if (timer === undefined) {
+        timer = setTimeout(function () {
+          waitRelease.then(() => {
+            release = function () {}
+            doToggle();
+          })
+          timer = undefined;
+        }, 500);
+      } else {
+        timer = clearTimeout(timer);
+      }
+    })
+    .mousemove(e => {
+      if (lastX !== undefined && lastX != e.pageX && lastY != e.pageY) {
+        timer = clearTimeout(timer);
+        release = function() {}
+      }
+      lastX = e.pageX;
+      lastY = e.pageY;
+    })
+    .mouseup(() => {
+      release();
+      lastX = lastY = undefined;
+    })
+});
+</script>
+<h1 id="name">
+K<span id="full">agurazaka</span><span id="dot">.</span><span
+id="R"> Ritsuka (<span lang="ch">晏雲杉</span>)</span>
+</h1>
+<p><a href="name.html">About my name</a>, <a href="pronoun.html">my
+pronouns</a></p>
+<style>
+  /* https://getbootstrap.com/docs/4.2/layout/overview/#responsive-breakpoints */
+  @media only screen and (min-width: 576px) {
+    #quote {
+      display: block !important;
+    }
+  }
+  #quote {
+    /* transition: all 0.5s; */
+  }
+  #quote-nav ul {
+    margin: 0;
+  }
+  #quote-nav li {
+    display: inline-block;
+    margin-right: 15px;
+    vertical-align: middle;
+  }
+  #quote-nav a {
+    margin-right: '15px';
+    color: #666;
+    text-decoration: underline;
+    background-image: none;
+  }
+</style>
+<!--
+<script>
+  function getProps(s) { // s: "hide" or "show"
+    return {
+      height: [s, "swing"],
+      overflow: "hidden", // set overflow: "hidden" during animation, unset when done.
+    };
+  }
+</script>
+<section id="quote" style="display: none;">
+  ### Quotes
+  <nav id="quote-nav"><ul>
+    <li><a id="quote-nav-rand">random</a></li>
+    <li><a id="quote-nav-all">all</a></li>
+  </ul></nav>
+  <script type="text/javascript">
+    var currentScript = document.currentScript;
+    window.addEventListener("load", () => {
+      fetch("quotes.json")
+        .then(res => res.json())
+        .then(function(data) {
+          var blockquotes = data.map(quote => {
+            var div = document.createElement('div');
+            div.innerHTML = quote.quote;
+
+            var author = document.createElement('strong');
+            author.innerHTML = quote.author || '';
+            var cite = document.createElement('cite');
+            cite.innerHTML = quote.cite || '';
+
+            var footer = document.createElement('footer');
+            footer.appendChild(author);
+            footer.appendChild(cite);
+
+            var blockquote = document.createElement('blockquote');
+            blockquote.style.display = 'none';
+            blockquote.appendChild(div);
+            blockquote.appendChild(footer);
+            
+            if (quote.lang)
+              blockquote.lang = quote.lang;
+
+            return blockquote;
+          })
+
+          var lastIdx = 0;
+          function selectRandom() {
+            blockquotes.forEach(blockquote => {
+              $(blockquote).animate(getProps("hide"));
+            });
+            var newIdx = Math.floor(Math.random() * data.length);
+            if (newIdx === lastIdx) newIdx = (newIdx + 1) % data.length;
+            lastIdx = newIdx;
+            $(blockquotes[newIdx]).animate(getProps("show"));
+          }
+          
+          function showAll() {
+            blockquotes.forEach(blockquote => {
+              $(blockquote).animate(getProps("show"));
+            });
+          }
+
+          document.querySelector('#quote-nav-rand').onclick = selectRandom;
+          document.querySelector('#quote-nav-all').onclick = showAll;
+          currentScript.after(...blockquotes);
+          selectRandom();
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    });
+  </script>
+</section>
+-->
+<p>During 2024 I am a post-doctoral Research Fellow at the Department of
+Electrical Engineering and Computer Science at the University of
+Michigan, under the supervision of <a
+target="_blank" rel="noopener" href="https://gitlab.eecs.umich.edu/wikis/stephane">Prof. Stéphane
+Lafortune</a>.</p>
+<p>I earned my Ph.D. degree in Computer Engineering from <a
+target="_blank" rel="noopener" href="https://www.ece.queensu.ca/">Department of Electrical and Computer
+Engineering</a> at <span class="queens">Queen's</span> University at
+Kingston, where I conducted research in the area of decentralized
+problems of discrete-event systems under the supervision of <a
+target="_blank" rel="noopener" href="https://www.ece.queensu.ca/people/K-Rudie/">Prof. Karen
+Rudie</a>.</p>
+<p>I obtained both of my BASc (2018) and MEng (2019) degrees in Computer
+Engineering from <span class="queens">Queen's</span> University.</p>
+<p>I was at McMaster University as an Ontario Visiting Graduate Student
+during the 2021 Fall term.</p>
+<p>My <a target="_blank" rel="noopener" href="https://github.com/ritsuka314/pubkey">PGP/GPG
+Pubkey</a></p>
+<p>My <a href="credentials.html">internet identities</a> (ORCID iD,
+GitHub, LinkedIn, etc.)</p>
+<h2 id="contact">Contact</h2>
+<p>Email: <u>ritsuka314 [at] queensu [dot] ca</u></p>
+<ul>
+<li><strong>How to address me</strong>: Ritsuka.</li>
+<li>Please do not use any honorific titles, including "Mr.", "Dr."</li>
+<li>Do not call me "Sir".</li>
+</ul>
+<h2 id="research"><a href="bibpage.html">Research</a></h2>
+<h2 id="teaching-assistant">Teaching Assistant</h2>
+<h3 id="graduate-ta">Graduate TA</h3>
+<pre>
+    CISC 465/865-2023W: Semantics of Programming Languages
+    ELEC 274-2023W: Computer Architecture
+    ELEC 371-2022F: Microprocessor Interfacing and Embedded Systems
+*   ELEC 270-2022W: Discrete Mathematics
+**  ELEC 270-2021W: Discrete Mathematics
+    ELEC 371-2020F: Microprocessor Interfacing and Embedded Systems
+    ELEC 270-2020W: Discrete Mathematics
+    ELEC 278-2019F: Data Structures
+    ELEC 278-2018F: Data Structures
+
+*   Head TA
+**  Recipient of the 2021 Dean's Teaching Assistant Award (DTA), as exceptional Teaching Assistant nominated by the department. With a monetary award. <a target="_blank" rel="noopener" href="https://engineering.queensu.ca/news/2021/06/teaching-assistants-from-around-the-globe-recognized-for-exemplary-instruction-.html#:~:text=Yunshan%20(Richard)%20Yan">[Link]</a> (known as <i>Yunshan (Richard) Yan</i>)
+</pre>
+<h3 id="undergraduate-ta">Undergraduate TA</h3>
+<pre>
+    ELEC 274-2018W: Computer Architecture
+    ELEC 278-2017F: Data Structures
+*   ELEC 274-2017W: Computer Architecture
+    ELEC 221-2016F: Electric Circuits
+
+*   Awarded as Teaching Assistant of the Year for Excellence in Education and Exceptional Teaching, as voted by students of the department, for the academic year of 2016/2017. <a target="_blank" rel="noopener" href="https://www.queensu.ca/ctl/awards/internal-awards/faculty-engineering-and-applied-science/electrical-and-computing-engineering#accordion-YxxnXWd:~:text=2016%20%2D%202017%20Richard%20Yan%20(2nd%20year%20winner%20CMPE)">[Link]</a> (known as <i>Richard Yan</i>)
+</pre>
+<h2 id="professional-services">Professional Services</h2>
+<p>Total number of reviews conducted: 12</p>
+<h3 id="journal-reviewer">Journal Reviewer</h3>
+<pre>
+<a target="_blank" rel="noopener" href="https://www.journals.elsevier.com/european-journal-of-control">European Journal of Control</a>
+<a target="_blank" rel="noopener" href="http://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=9">IEEE Transactions on Automatic Control</a>
+</pre>
+<h3 id="conference-reviewer">Conference Reviewer</h3>
+<pre>
+IEEE Conference on Decision and Control (CDC)
+IFAC World Congress
+</pre>
+</section>
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      <hr>
+      &copy; 2024
+      <a href="/">Ritsuka</a>
+      <br>
+      Last modified: <span id="last-modified">
+        2024 Mar 20th
+      </span>
+      <br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+  </div>
+</body>
+</html>
