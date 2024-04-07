@@ -10,7 +10,7 @@ blockquote {
 blockquote:lang(ch) {
   font-family: "Noto Sans TC", "Noto Sans SC";
 }
-blockquote:lang(jp) {
+blockquote:lang(ja) {
   font-family: "Noto Sans JP";
 }
 blockquote p {
