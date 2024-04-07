@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://ritsuka.moe/index.html</loc>
+    
+    <lastmod>2024-04-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://ritsuka.moe/bibpage.html</loc>
     
     <lastmod>2024-04-07</lastmod>
@@ -21,15 +30,6 @@
   
   <url>
     <loc>https://ritsuka.moe/name.html</loc>
-    
-    <lastmod>2024-04-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ritsuka.moe/index.html</loc>
     
     <lastmod>2024-04-07</lastmod>
     
