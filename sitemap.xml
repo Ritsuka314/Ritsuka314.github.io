@@ -2,18 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://ritsuka.moe/credentials.html</loc>
+    <loc>https://ritsuka.moe/index.html</loc>
     
-    <lastmod>2024-03-20</lastmod>
+    <lastmod>2024-09-04</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://ritsuka.moe/index.html</loc>
+    <loc>https://ritsuka.moe/calendar.html</loc>
     
-    <lastmod>2024-03-20</lastmod>
+    <lastmod>2024-07-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ritsuka.moe/bibpage.html</loc>
+    
+    <lastmod>2024-07-21</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -22,7 +31,16 @@
   <url>
     <loc>https://ritsuka.moe/name.html</loc>
     
-    <lastmod>2024-03-20</lastmod>
+    <lastmod>2024-07-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ritsuka.moe/credentials.html</loc>
+    
+    <lastmod>2024-07-21</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -46,28 +64,10 @@
     <priority>0.6</priority>
   </url>
   
-  <url>
-    <loc>https://ritsuka.moe/bibpage.html</loc>
-    
-    <lastmod>2024-03-20</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ritsuka.moe/calendar.html</loc>
-    
-    <lastmod>2024-03-20</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
 
   <url>
     <loc>https://ritsuka.moe/</loc>
-    <lastmod>2024-03-20</lastmod>
+    <lastmod>2024-09-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>

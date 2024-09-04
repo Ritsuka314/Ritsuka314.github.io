@@ -1,44 +1,3 @@
-blockquote {
-  margin: 1rem 10px;
-  padding: 0.5em 10px;
-  background: inherit;
-  color: var(--quote-color);
-  quotes: "\201C" "\201D" "\2018" "\2019";
-  font-weight: bold;
-  font-family: Georgia;
-}
-blockquote:lang(ch) {
-  font-family: "Noto Sans TC", "Noto Sans SC";
-}
-blockquote:lang(jp) {
-  font-family: "Noto Sans JP";
-}
-blockquote p {
-  margin: 0;
-}
-blockquote:before {
-  margin-right: 0.25em;
-  color: var(--quote-color);
-  content: "\201C";
-  vertical-align: -0.4em;
-  font-size: 2em;
-  line-height: 0.1em;
-}
-blockquote footer {
-  margin: line-height 0;
-  color: var(--meta-color);
-  font-size: 11px;
-}
-blockquote footer a {
-  color: var(--meta-color);
-}
-blockquote footer a:hover {
-  color: hsl(from var(--meta-color) h s calc(l - 5%));
-}
-blockquote footer cite:not(:empty):before {
-  padding: 0 0.5em;
-  content: "—";
-}
 body {
 /* JD */
 /* --slide-bgcolor: #DDCCCC;
@@ -95,30 +54,26 @@ body {
   max-width: 42rem;
   margin: 0 auto;
 }
-h1 :lang(ch),
-h2 :lang(ch),
-h3 :lang(ch) {
-  font-family: 'Noto Sans TC';
-}
 h1,
 h2,
 h3 {
   font-family: Open Sans, sans-serif;
 }
-p :lang(ch) {
-  font-family: 'Noto Sans TC';
-}
-p :lang(jp) {
-  font-family: 'Noto Sans JP';
-}
-p :lang(ru) {
-  font-family: 'Noto Serif';
-}
 p {
   margin-bottom: 1.75rem;
 }
+:lang(ch) {
+  font-family: 'Noto Sans SC';
+}
+:lang(ja) {
+  font-family: 'Noto Sans JP';
+}
+:lang(ru) {
+  font-family: 'Noto Serif';
+}
 a:link,
-a:visited {
+a:visited,
+a {
   font-weight: bold;
   text-decoration: none;
   color: var(--link-color);
