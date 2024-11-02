@@ -2,9 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://ritsuka.moe/bibpage.html</loc>
+    
+    <lastmod>2024-11-02</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://ritsuka.moe/index.html</loc>
     
-    <lastmod>2024-09-04</lastmod>
+    <lastmod>2024-09-29</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -12,15 +21,6 @@
   
   <url>
     <loc>https://ritsuka.moe/calendar.html</loc>
-    
-    <lastmod>2024-07-21</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ritsuka.moe/bibpage.html</loc>
     
     <lastmod>2024-07-21</lastmod>
     
@@ -47,7 +47,7 @@
   </url>
   
   <url>
-    <loc>https://ritsuka.moe/pronoun.html</loc>
+    <loc>https://ritsuka.moe/quotes.json</loc>
     
     <lastmod>2024-03-20</lastmod>
     
@@ -56,7 +56,7 @@
   </url>
   
   <url>
-    <loc>https://ritsuka.moe/quotes.json</loc>
+    <loc>https://ritsuka.moe/pronoun.html</loc>
     
     <lastmod>2024-03-20</lastmod>
     
@@ -67,7 +67,7 @@
 
   <url>
     <loc>https://ritsuka.moe/</loc>
-    <lastmod>2024-09-04</lastmod>
+    <lastmod>2024-11-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
