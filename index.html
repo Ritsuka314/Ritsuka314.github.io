@@ -34,27 +34,6 @@
 <div style="display: none;">
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
 </div>
-<style>
-  @font-face {
-    font-family: 'queens';
-    src: url('/fonts/QUEENS-R.TTF') format('truetype');
-  }
-  .queens {
-    font-family: 'queens',sans-serif;
-  }
-
-  #name {
-    display: block;
-    text-align: center;
-  }
-
-  pre {
-    text-align: left;
-    white-space: pre-wrap;       /* Since CSS 2.1 */
-    font-family: 'Space Mono', monospace;
-    font-size: 12pt;
-  }
-</style>
 <link href="/Datetime/Datetime.css" rel="stylesheet">
 <script type='module' src="/Datetime/Datetime.js" async></script>
 <div class="datetime-now" lang="ch">
@@ -140,12 +119,19 @@ style="white-space: nowrap;"></span> <span style="white-space: nowrap;">
     })
 });
 </script>
+<style>
+  #name {
+    display: block;
+    text-align: center;
+  }
+</style>
 <h1 id="name">
 K<span id="full">agurazaka</span><span id="dot">.</span><span
 id="R"> Ritsuka (<span lang="ch">晏雲杉</span>)</span>
 </h1>
 <p><a href="name.html">About my name</a>, <a href="pronoun.html">my
 pronouns</a></p>
+<!--
 <style>
   /* https://getbootstrap.com/docs/4.2/layout/overview/#responsive-breakpoints */
   @media only screen and (min-width: 576px) {
@@ -171,7 +157,7 @@ pronouns</a></p>
     background-image: none;
   }
 </style>
-<!--
+
 <script>
   function getProps(s) { // s: "hide" or "show"
     return {
@@ -252,14 +238,27 @@ target="_blank" rel="noopener" href="https://raw.githubusercontent.com/Ritsuka31
 Huawei Technologies Canada Co., Ltd.</p>
 <h1 id="ubi-eram-pre-huawei">Ubi Eram (pre-Huawei)</h1>
 <style>
-ul p {
-  margin: 0px;
-}
+  #UbiEram p {
+    margin: 0px;
+  }
 
-li + li {
-  margin-top: 10px;
-}
+  #UbiEram li + li {
+    margin-top: 15px;
+  }
+
+  #UbiEram li p:first-child {
+    font-weight: bold;
+  }
+
+  @font-face {
+    font-family: 'queens';
+    src: url('/fonts/QUEENS-R.TTF') format('truetype');
+  }
+  .queens {
+    font-family: 'queens',sans-serif;
+  }
 </style>
+<div id="UbiEram">
 <ul>
 <li><p>B.A.Sc (2018), M.Eng. (2019) in Computer Engineering</p>
 <p><a target="_blank" rel="noopener" href="https://smithengineering.queensu.ca/ece/">Department of
@@ -285,6 +284,7 @@ Engineering and Computer Science</a></p>
 target="_blank" rel="noopener" href="https://gitlab.eecs.umich.edu/wikis/stephane">Prof. Stéphane
 Lafortune</a></p></li>
 </ul>
+</div>
 <p>My research area is the problems of discrete-event systems,
 applicable to supervisory control and cyber-security (diagnosibility,
 opacity, detectability). I use Isabelle/HOL extensively in my
@@ -299,10 +299,10 @@ GitHub, LinkedIn, etc.)</p>
 <ul>
 <li>Emails:
 <ul>
-<li><u>me [at] Ritsuka [dot] moe</u></li>
-<li><u>Ritsuka [at] Huawei [dot] com</u></li>
-<li><u>Ritsuka [at] UMich [dot] edu</u></li>
-<li><u>Ritsuka314 [at] QueensU [dot] ca</u></li>
+<li>me [at] Ritsuka [dot] moe</li>
+<li>Ritsuka [at] Huawei [dot] com</li>
+<li>Ritsuka [at] UMich [dot] edu</li>
+<li>Ritsuka314 [at] QueensU [dot] ca</li>
 </ul></li>
 <li><strong>How to address me</strong>: Ritsuka.</li>
 <li>Please do not use any honorific titles, including "Mr.", "Dr."</li>
@@ -335,6 +335,14 @@ GitHub, LinkedIn, etc.)</p>
 </pre>
 <h2 id="professional-services">Professional Services</h2>
 <p>Total number of reviews conducted: 17</p>
+<style>
+  pre {
+    text-align: left;
+    white-space: pre-wrap;       /* Since CSS 2.1 */
+    font-family: 'Space Mono', monospace;
+    font-size: 12pt;
+  }
+</style>
 <h3 id="journal-reviewer">Journal Reviewer</h3>
 <pre>
 <a target="_blank" rel="noopener" href="https://www.sciencedirect.com/journal/automatica">Automatica</a>
@@ -357,7 +365,7 @@ IFAC World Congress
       <a href="/">Ritsuka</a>
       <br>
       Last modified: <span id="last-modified">
-        2024 Jul 21st
+        2024 Nov 18th
       </span>
       <br>
       Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
