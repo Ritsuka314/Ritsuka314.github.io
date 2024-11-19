@@ -97,13 +97,11 @@
     text-align: left; # auto hyphenation doesn't work. why?
   }
 
-  .bibtex_display td {
-    border-left: 1em solid transparent;
+  .bibtex_display tr + tr td {
     border-top: 1em solid transparent;
   }
 
   .bibtex_display td:first-child {
-    border-left: 0;
     padding-right: 10px;
     width: fit-content;
     white-space: nowrap;
@@ -111,10 +109,6 @@
 
   .bibtex_display td {
     vertical-align: top;
-  }
-
-  .bibtex_display tr:first-child td {
-    border-top: 0;
   }
 
   .manu { border-left: 12px solid var(--manu-bgcolor) !important; padding-left: 10px}
@@ -401,7 +395,7 @@ journal paper
       <a href="/">Ritsuka</a>
       <br>
       Last modified: <span id="last-modified">
-        2024 Jul 21st
+        2024 Nov 18th
       </span>
       <br>
       Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
