@@ -48,13 +48,11 @@
   h1.header {margin-left:8px;}
   
   .year {
-    font-family: Open Sans, sans-serif;
     font-size: 1.17em;
     font-weight: bold;
   }
 
   .title {
-    font-family: "Open Sans",sans-serif;
     font-weight: 700;
   }
 
@@ -67,7 +65,6 @@
     
     white-space: nowrap;
     
-    font-family: "Open Sans",sans-serif;
     font-size: 12px;
     
     line-height: 1.5;
@@ -100,13 +97,11 @@
     text-align: left; # auto hyphenation doesn't work. why?
   }
 
-  .bibtex_display td {
-    border-left: 1em solid transparent;
+  .bibtex_display tr + tr td {
     border-top: 1em solid transparent;
   }
 
   .bibtex_display td:first-child {
-    border-left: 0;
     padding-right: 10px;
     width: fit-content;
     white-space: nowrap;
@@ -114,10 +109,6 @@
 
   .bibtex_display td {
     vertical-align: top;
-  }
-
-  .bibtex_display tr:first-child td {
-    border-top: 0;
   }
 
   .manu { border-left: 12px solid var(--manu-bgcolor) !important; padding-left: 10px}
@@ -131,6 +122,84 @@
 </p>
 <table class="bibtex_table">
 <tbody class="bibtex_display">
+<tr>
+<td>
+<div class="me">
+K. Ritsuka
+</div>
+<div>
+Stéphane Lafortune
+</div>
+<div>
+Feng Lin
+</div>
+<div>
+Caishen Wang
+</div>
+</td>
+<td class="jour">
+<p class="title">
+Detectability of Discrete Event Systems under Sensor Attacks
+</p>
+<p class="note">
+Accepted for publication in the <em>Journal of Systems Science and
+Complexity (JSSC)</em>
+</p>
+<p>
+<a class="btn" target="_blank" rel="noopener" href="https://doi.org/10.5281/zenodo.13900231">Isabelle/HOL
+code</a>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<div class="me">
+K. Ritsuka
+</div>
+<div>
+Stéphane Lafortune
+</div>
+<div>
+Feng Lin
+</div>
+</td>
+<td class="jour">
+<p class="title">
+Joint Opacity and Opacity against State-Estimate-Intersection-based
+Intrusion of Discrete-Event Systems
+</p>
+<p class="note">
+Accepted for publication in <em>Automatica</em>
+</p>
+<p>
+<a class="btn" target="_blank" rel="noopener" href="https://doi.org/10.5281/zenodo.13695693">Isabelle/HOL
+code</a>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<div class="me">
+K. Ritsuka
+</div>
+<div>
+Stéphane Lafortune
+</div>
+</td>
+<td class="manu">
+<p class="title">
+The Universal State-Estimate-Intersection-Based Architecture for
+Decentralized Problems of Discrete-Event Systems
+</p>
+<p class="note">
+under review.
+</p>
+<p>
+<a class="btn" target="_blank" rel="noopener" href="https://doi.org/10.5281/zenodo.13370929">Isabelle/HOL
+code</a>
+</p>
+</td>
+</tr>
 <tr>
 <td>
 <div class="me">
@@ -250,7 +319,7 @@ Karen Rudie
 </td>
 <td class="jour">
 <p class="title">
-Do What You Know: Coupling Knowledge with Action in Discrete-Event
+Do What You Know:<br> Coupling Knowledge with Action in Discrete-Event
 Systems
 </p>
 <p class="note">
@@ -323,11 +392,11 @@ journal paper
   <div class="outer">
     <div id="footer-info" class="inner">
       <hr>
-      &copy; 2024
+      &copy; 2025
       <a href="/">Ritsuka</a>
       <br>
       Last modified: <span id="last-modified">
-        2024 Apr 16th
+        2025 Feb 14th
       </span>
       <br>
       Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>

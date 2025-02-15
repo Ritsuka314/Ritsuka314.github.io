@@ -54,30 +54,26 @@ body {
   max-width: 42rem;
   margin: 0 auto;
 }
-h1 :lang(ch),
-h2 :lang(ch),
-h3 :lang(ch) {
-  font-family: 'Noto Sans TC';
-}
 h1,
 h2,
 h3 {
   font-family: Open Sans, sans-serif;
 }
-p :lang(ch) {
-  font-family: 'Noto Sans TC';
-}
-p :lang(ja) {
-  font-family: 'Noto Sans JP';
-}
-p :lang(ru) {
-  font-family: 'Noto Serif';
-}
 p {
   margin-bottom: 1.75rem;
 }
+:lang(ch) {
+  font-family: 'Noto Sans SC';
+}
+:lang(ja) {
+  font-family: 'Noto Sans JP';
+}
+:lang(ru) {
+  font-family: 'Noto Serif';
+}
 a:link,
-a:visited {
+a:visited,
+a {
   font-weight: bold;
   text-decoration: none;
   color: var(--link-color);
