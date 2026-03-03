@@ -1,27 +1,31 @@
 // Use 'https://cdn.skypack.dev/' + 'npm package name' + '@version its optional'
 import { CalendarChinese } from 'https://cdn.skypack.dev/date-chinese'
 
-let rad = deg => (deg * Math.PI) / 180.0;
-let sin = function (x) {return Math.sin(rad(x))}
-let floor = Math.floor
+// Constants and configuration
+const RADIAN_CONVERSION = Math.PI / 180.0;
+// epoch seconds of J2000.0
+// date --date="2000-01-01T12:00:00Z" +%s
+const J2000_EPOCH = 94672800; // epoch seconds of J2000.0
+// epoch seconds of the new moon on 2021 Oct 06 11:05 UTC
+// date --date="2021-10-06T11:05Z" +%s
+const NEW_MOON_EPOCH = 1633518300; // epoch seconds of new moon 2021 Oct 06 11:05 UTC
+const LUNAR_CYCLE = 29.53059; // days in lunar cycle
+const SECONDS_PER_DAY = 86400;
 
-let stems = ["甲", "乙", "丙", "丁", "戊", "己", "庚", "辛", "壬", "癸"]
-let branches = ["子", "丑", "寅", "卯", "辰", "巳", "午", "未", "申", "酉", "戌", "亥"]
-let cmonth = [
-  '端月',
-  '杏月',
-  '桃月',
-  '梅月',
-  '榴月',
-  '荔月',
-  '蘭月',
-  '桂月',
-  '菊月',
-  '陽月',
-  '葭月',
-  '臘月',
-]
-let pentad_tbl = [
+// Utility functions
+const rad = deg => deg * RADIAN_CONVERSION;
+const sin = x => Math.sin(rad(x));
+const floor = Math.floor;
+
+// Data arrays (constants)
+const STEMS = ["甲", "乙", "丙", "丁", "戊", "己", "庚", "辛", "壬", "癸"];
+const BRANCHES = ["子", "丑", "寅", "卯", "辰", "巳", "午", "未", "申", "酉", "戌", "亥"];
+const CMONTH = [
+  '端月', '杏月', '桃月', '梅月', '榴月', '荔月',
+  '蘭月', '桂月', '菊月', '陽月', '葭月', '臘月'
+];
+
+const PENTAD_DATA = [
   ["春分",["玄鳥至",  "雷乃發聲",        "始電"],        ["白羊宮", "A"]],  
   ["清明",["桐始華",  "田鼠化鴽",        "虹始見"],      ["白羊宮", "A"]],
   ["穀雨",["萍始生",  "鳴鳩拂羽",        "戴勝降於桑"],  ["金牛宮", "B"]],
@@ -47,22 +51,14 @@ let pentad_tbl = [
   ["雨水",["獺祭魚",  "鴻鴈來",          "草木萌動"],    ["双魚宮", "L"]],
   ["驚蟄",["桃始華",  "倉庚鳴",          "鷹化為鳩"],    ["双魚宮", "L"]]
 ]
-let lunar_phase_tbl = [ "a", "c", "h", "f", "b", "e", "g", "d" ] // assume northern hemisphere view
-let month_tbl = [
-  "睦月",
-  "如月",
-  "弥生",
-  "卯月",
-  "皐月",
-  "水無月",
-  "文月",
-  "葉月",
-  "長月",
-  "神無月",
-  "霜月",
-  "師走",
-]
-let youbi_tbl = [
+
+const LUNAR_PHASES = ["a", "c", "h", "f", "b", "e", "g", "d"]; // assume northern hemisphere view
+const MONTH_NAMES = [
+  "睦月", "如月", "弥生", "卯月", "皐月", "水無月",
+  "文月", "葉月", "長月", "神無月", "霜月", "師走"
+];
+
+const WEEKDAYS = [
   ["日曜日", "Q"],
   ["月曜日", "R"],
   ["火曜日", "U"],
@@ -70,108 +66,122 @@ let youbi_tbl = [
   ["木曜日", "V"],
   ["金曜日", "T"],
   ["土曜日", "W"],
-]
+];
 
-let rendering     = $('.rendering')
-let datetime_now  = $('.datetime-now')
-let s_year        = $('.datetime-now .year')
-let s_month       = $('.datetime-now .month')
-let s_day         = $('.datetime-now .day')
+const DOM_ELEMENTS = {
+  rendering     : $('.rendering'),
+  datetimeNow   : $('.datetime-now'),
 
-let s_cyear       = $('.datetime-now .cyear')
-let s_cmonth      = $('.datetime-now .cmonth')
-let s_cday        = $('.datetime-now .cday')
+  year          : $('.datetime-now .year'),
+  month         : $('.datetime-now .month'),
+  day           : $('.datetime-now .day'),
 
-let s_youbi_logo  = $('.datetime-now .youbi_logo')
-let s_youbi       = $('.datetime-now .youbi')
+  cyear         : $('.datetime-now .cyear'),
+  cmonth        : $('.datetime-now .cmonth'),
+  cday          : $('.datetime-now .cday'),
 
-let s_zodiac_logo = $('.datetime-now .zodiac_logo')
-let s_zodiac      = $('.datetime-now .zodiac')
+  youbiLogo     : $('.datetime-now .youbi_logo'),
+  youbi         : $('.datetime-now .youbi'),
 
-let s_lunar_phase = $('.datetime-now .lunar_phase')
+  zodiacLogo    : $('.datetime-now .zodiac_logo'),
+  zodiac        : $('.datetime-now .zodiac'),
 
-let s_pentad      = $('.datetime-now .pentad')
+  lunarPhase    : $('.datetime-now .lunar_phase'),
 
-let s_time        = $('.datetime-now .time')
+  pentad        : $('.datetime-now .pentad'),
 
-function Update(time) {
+  time          : $('.datetime-now .time'),
+};
+
+// Calculate solar position and related astronomical data
+function calculateSolarPosition(time) {
   // compute the apparent ecliptic longitude of the Sun at now
   // https://en.wikipedia.org/wiki/Position_of_the_Sun#Ecliptic_coordinates
 
-  // The getTime method returns the time in milliseconds.
-  let epoch = Math.floor(time.getTime()/1000.0)
-  // epoch seconds of J2000.0
-  // obtained by
-  // date --date="2000-01-01T12:00:00Z" +%s
-  let n = (epoch - 94672800) / 86400
-  let L = 280.260 + 0.9856474*n
-  let g = 357.528 + 0.9856003*n
-  var lon = L + 1.915*sin(g) + 0.020*sin(2*g)
-  lon = floor(lon % 360)
-  var pentad = floor(lon * 72 / 360) // 0 - 71
-  var term = floor(pentad / 3)       // 0 - 23
-  pentad = pentad % 3            // 0 - 2
-
-  term = pentad_tbl[term]
-  let zodiac = term[2]
-  let youbi = youbi_tbl[time.getDay()]
-
-  s_year .text("全新世紀元 " + (10000 + time.getFullYear()) + " 年 ") // YYYY
-  s_month.text(month_tbl[time.getMonth()])  // name of the Month
-  s_day  .text(                             // DD
-    String(time.getDate()).padStart(2,"0")
-    + " 日"
-  )
-
-  let cal = new CalendarChinese()
-  cal.fromGregorian(time.getFullYear(), time.getMonth(), time.getDate());
-  s_cyear.text(
-      stems[(cal.year - 1) % 10]
-    + branches[(cal.year - 1) % 12]
-    + "年"
-  );
-  s_cmonth.text(cmonth[cal.month - 1]);
-  s_cday.text(cal.day + " 日");
-
-  s_youbi_logo.text(' ' + youbi[1] + ' ')
-  s_youbi.text(youbi[0])
-
-  s_zodiac_logo.text(' ' + zodiac[1] + ' ')
-  s_zodiac.text(zodiac[0])
-
-  // epoch seconds of the new moon on 2021 Oct 06 11:05 UTC
-  // obtained by
-  // date --date="2021-10-06T11:05Z" +%s
-  n = (epoch - 1633518300) / 86400
-  let age = floor(n % 29.53059 / 29.53059 * 7 + 0.5)
-  let phase = lunar_phase_tbl[age]
-  s_lunar_phase.text('  ' + phase + '  ')
-
-  pentad = (
-      term[0]                // solar term
-    + " "
-    + term[1][pentad]        // pentad
-  )
-  s_pentad.text(pentad)
-
-  s_time.text(
-      (time.getHours() >= 12 ? " 午後 " : " 午前 ")
-    + " "
-    + String(time.getHours() - (time.getHours() > 12 ? 12 : 0)).padStart(2, "0")
-    + ":"
-    + String(time.getMinutes()).padStart(2, "0")
-    + ":"
-    + String(time.getSeconds()).padStart(2, "0")
-  )
-
-  rendering.each((_, e) => e.style.setProperty( 'display', 'none' ))
-  datetime_now.each((_, e) => e.style.setProperty( 'display', 'block', 'important' ))
+  const epoch = floor(time.getTime() / 1000);
+  const n = (epoch - J2000_EPOCH) / SECONDS_PER_DAY;
+  
+  // Solar longitude calculations
+  const L = 280.260 + 0.9856474 * n;
+  const g = 357.528 + 0.9856003 * n;
+  const lon = floor((L + 1.915 * sin(g) + 0.020 * sin(2 * g)) % 360);
+  
+  const pentadIndex = floor(lon * 72 / 360); // 0 - 71
+  const termIndex = floor(pentadIndex / 3);  // 0 - 23
+  const pentadSubIndex = pentadIndex % 3;    // 0 - 2
+  
+  return { termIndex, pentadSubIndex, epoch };
 }
 
-rendering.text("Rendering...")
+// Calculate lunar phase
+function calculateLunarPhase(epoch) {
+  const n = (epoch - NEW_MOON_EPOCH) / SECONDS_PER_DAY;
+  const age = floor((n % LUNAR_CYCLE) / LUNAR_CYCLE * 7 + 0.5);
+  return LUNAR_PHASES[age % LUNAR_PHASES.length];
+}
 
+// Format time in 12-hour format with Japanese period
+function formatTime12h(time) {
+  const hours = time.getHours();
+  const period = hours >= 12 ? "午後" : "午前";
+  const displayHours = hours > 12 ? hours - 12 : (hours === 0 ? 12 : hours);
+  
+  return `${period} ${String(displayHours).padStart(2, '0')}:${String(time.getMinutes()).padStart(2, '0')}:${String(time.getSeconds()).padStart(2, '0')}`;
+}
+
+// Main update function
+function Update(time) {
+  try {
+    const { termIndex, pentadSubIndex, epoch } = calculateSolarPosition(time);
+    const solarTerm = PENTAD_DATA[termIndex];
+    const weekday = WEEKDAYS[time.getDay()];
+    
+    // Update basic date information
+    DOM_ELEMENTS.year.text(`全新世紀元 ${10000 + time.getFullYear()} 年`);
+    DOM_ELEMENTS.month.text(MONTH_NAMES[time.getMonth()]);
+    DOM_ELEMENTS.day.text(`${String(time.getDate()).padStart(2, '0')} 日`);
+    
+    // Update Chinese calendar
+    let cal = new CalendarChinese().fromDate(time);
+    DOM_ELEMENTS.cyear.text(`${STEMS[(cal.year - 1) % 10]}${BRANCHES[(cal.year - 1) % 12]}年`);
+    DOM_ELEMENTS.cmonth.text(cal.leap ? "閏" : "" + CMONTH[cal.month - 1]);
+    DOM_ELEMENTS.cday.text(`${cal.day} 日`);
+    
+    // Update weekday
+    DOM_ELEMENTS.youbiLogo.text(` ${weekday[1]} `);
+    DOM_ELEMENTS.youbi.text(weekday[0]);
+    
+    // Update zodiac
+    const zodiac = solarTerm[2];
+    DOM_ELEMENTS.zodiacLogo.text(` ${zodiac[1]} `);
+    DOM_ELEMENTS.zodiac.text(zodiac[0]);
+    
+    // Update lunar phase
+    const lunarPhase = calculateLunarPhase(epoch);
+    DOM_ELEMENTS.lunarPhase.text(`  ${lunarPhase}  `);
+    
+    // Update pentad
+    DOM_ELEMENTS.pentad.text(`${solarTerm[0]} ${solarTerm[1][pentadSubIndex]}`);
+    
+    // Update time
+    DOM_ELEMENTS.time.text(formatTime12h(time));
+    
+    // Toggle visibility
+    DOM_ELEMENTS.rendering.hide();
+    DOM_ELEMENTS.datetimeNow.show();
+    
+  } catch (error) {
+    console.error('Error updating datetime display:', error);
+  }
+}
+
+// Initialize display
+DOM_ELEMENTS.rendering.text("Rendering...");
+
+// Update immediately, then set up interval
+Update(new Date());
+
+// Set up interval with optimized timing
 setInterval(() => {
-  // TODO instead of use now, use 23:59:59 of the day
-  let now = new Date();
-  Update(now);
-},1000);
+  Update(new Date());
+}, 1000);

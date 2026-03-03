@@ -4,7 +4,7 @@
   <url>
     <loc>https://ritsuka.moe/bibpage.html</loc>
     
-    <lastmod>2025-09-12</lastmod>
+    <lastmod>2026-02-28</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -47,7 +47,7 @@
   </url>
   
   <url>
-    <loc>https://ritsuka.moe/pronoun.html</loc>
+    <loc>https://ritsuka.moe/quotes.json</loc>
     
     <lastmod>2024-03-20</lastmod>
     
@@ -56,7 +56,7 @@
   </url>
   
   <url>
-    <loc>https://ritsuka.moe/quotes.json</loc>
+    <loc>https://ritsuka.moe/pronoun.html</loc>
     
     <lastmod>2024-03-20</lastmod>
     
@@ -67,7 +67,7 @@
 
   <url>
     <loc>https://ritsuka.moe/</loc>
-    <lastmod>2025-09-12</lastmod>
+    <lastmod>2026-03-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
