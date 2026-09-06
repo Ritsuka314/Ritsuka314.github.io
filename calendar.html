@@ -1,50 +1,54 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Ritsuka - Calendar</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  
-<link rel="stylesheet" href="/css/style.css">
-
+  <link rel="stylesheet" href="/assets/css/site.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC&amp;family=Noto+Serif+SC&amp;family=Noto+Sans+TC&amp;family=Noto+Serif+TC&amp;family=Noto+Serif+JP&amp;family=Noto+Serif">
+  <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/microsoft-yahei">
   
-  <link href='https://fonts.googleapis.com/css2?family=Noto+Sans+SC&amp;family=Noto+Serif+SC&amp;family=Noto+Sans+TC&amp;family=Noto+Serif+TC&amp;family=Noto+Serif+JP&amp;family=Noto+Serif' rel="stylesheet">
-  <link href="https://fonts.cdnfonts.com/css/microsoft-yahei" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/calendar.css">
   
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-6BHPJFKCD7"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  
+    <script type="module" src="/assets/js/calendar.js" async></script>
+  
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6BHPJFKCD7"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-6BHPJFKCD7');
+    </script>
+  
+  <meta name="generator" content="Eleventy">
+</head>
 
-  gtag('config', 'G-6BHPJFKCD7');
-</script>
-
-<meta name="generator" content="Hexo 7.3.0"></head>
-
-<body lang="en">
-  <div id="container">
-    <div id="wrap">
-      
-        <header id="header">
+  <body>
+    <div id="container">
+      <div id="wrap">
+        
+          <header id="header">
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
       <div id="header-inner" class="inner">
-        <nav id="main-nav">
-          <a id="main-nav-toggle" class="nav-icon"></a>
+        <nav id="main-nav" aria-label="Main navigation">
           <a class="main-nav-link" href="/">Home Page</a>
         </nav>
       </div>
     </div>
   </div>
 </header>
-      
-      <div class="outer">
-        <section id="main"><script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<style>
+
+        
+        <div class="outer">
+          <main id="main">
+            <style>
   .rendering {
     font-size: 10pt;
     text-align: center;
@@ -57,155 +61,172 @@
     vertical-align: top;
   }
 </style>
-<link href="/css/Datetime.css" rel="stylesheet">
-<script type='module' src="/js/Datetime.js" async></script>
-<p class="rendering" style="white-space: nowrap;">
-You need JavaScript to see the content.
-</p>
+<p class='rendering' style='white-space: nowrap;'>You need JavaScript to see the content.</p>
 <div class="datetime-now" lang="ch">
-<p><span class="year" style="white-space: nowrap;"></span> <span
-class="month" style="white-space: nowrap;"></span> <span class="day"
-style="white-space: nowrap;"></span> <span style="white-space: nowrap;">
-<span class="youbi_logo"></span> <span class="youbi"></span> </span>
-<span style="white-space: nowrap;"> <span class="zodiac_logo"></span>
-<span class="zodiac"></span> </span> <span class="lunar_phase"
-style="white-space: nowrap;"></span> <span class="pentad"
-style="white-space: nowrap;"></span> <span class="count_nine"
-style="white-space: nowrap;"></span> <span class="time"
-style="white-space: nowrap;"></span></p>
+  <span class="year"></span>
+  <span class="month"></span>
+  <span class="day"></span>
+  <span>
+    <span class="youbi_logo"></span>
+    <span class="youbi"></span>
+  </span>
+  <span>
+    <span class="zodiac_logo"></span>
+    <span class="zodiac"></span>
+  </span>
+  <span class="lunar_phase"></span>
+  <span class="pentad"></span>
+  <span class="count_nine"></span>
+  <span class="time"></span>
 </div>
-<p>What displayed above and in the header of the home page is the
-current date and time with some astronomical events, many of which are
-related to the <a
-target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Chinese_calendar">Chinese lunisolar
-calendar</a>. The meanings are given in the table below.</p>
-<p class="rendering" style="white-space: nowrap;">
-You need JavaScript to see the content.
-</p>
-<table class="datetime-now" style="font-size: 10pt; width: 90%; margin-left: auto;margin-right: auto;">
+<p>What displayed above and in the header of the home page
+is the current date and time
+with some astronomical events,
+many of which are related to the
+<a href="https://en.wikipedia.org/wiki/Chinese_calendar" target="_blank" rel="noopener">Chinese lunisolar calendar</a>.
+The meanings are given in the table below.</p>
+<p class='rendering' style='white-space: nowrap;'>You need JavaScript to see the content.</p>
+<table class='datetime-now' style='font-size: 10pt; width: 90%; margin-left: auto;margin-right: auto;'>
 <tr>
-<td>
-<span class="year" style="white-space: nowrap;"></span> <span
-class="month" style="white-space: nowrap;"></span> <span class="day"
-style="white-space: nowrap;"></span>
-</td>
-<td>
-Date in Gregorian Calendar. The year is given in
-<a target="_blank" rel="noopener" href='https://en.wikipedia.org/wiki/Holocene_calendar'> Holocene
-Era</a>. The month is given in its
-<a target="_blank" rel="noopener" href='https://ja.wikipedia.org/wiki/日本の暦#各月の別名'> Japanese
-name</a>.
-</td>
+  <td>
+    <span class='year'  style='white-space: nowrap;'></span>
+    <span class='month' style='white-space: nowrap;'></span>
+    <span class='day'   style='white-space: nowrap;'></span>
+  </td>
+  <td>
+    Date in Gregorian Calendar.
+    The year is given in
+    <a href='https://en.wikipedia.org/wiki/Holocene_calendar' target="_blank" rel="noopener">
+    Holocene Era</a>.
+    The month is given in its
+    <a href='https://ja.wikipedia.org/wiki/日本の暦#各月の別名' target="_blank" rel="noopener">
+    Japanese name</a>.
+  </td>
 </tr>
 <tr>
-<td>
-<span class="youbi_logo"></span> <span class="youbi"></span>
-</td>
-<td>
-Day of the Week, named after the
-<a target="_blank" rel="noopener" href='https://en.wikipedia.org/wiki/Names_of_the_days_of_the_week#East_Asian_tradition'>
-Seven Luminaries (七曜 qī yào)</a>, written in Classical Chinese.
-</td>
+  <td>
+    <span class='youbi_logo'></span>
+    <span class='youbi'></span>
+  </td>
+  <td>
+    Day of the Week,
+    named after the
+    <a href='https://en.wikipedia.org/wiki/Names_of_the_days_of_the_week#East_Asian_tradition' target="_blank" rel="noopener">
+    Seven Luminaries (七曜 qī yào)</a>,
+    written in Classical Chinese.
+  </td>
 </tr>
 <tr>
-<td>
-<span class="cyear" style="white-space: nowrap;"></span> <span
-class="cmonth" style="white-space: nowrap;"></span> <span class="cday"
-style="white-space: nowrap;"></span>
-</td>
-<td>
-Date in Chinese Lunisolar Calendar. I picked my favourite name for the
-month.
-</td>
+  <td>
+    <span class='cyear'  style='white-space: nowrap;'></span>
+    <span class='cmonth' style='white-space: nowrap;'></span>
+    <span class='cday'   style='white-space: nowrap;'></span>
+  </td>
+  <td>
+    Date in Chinese Lunisolar Calendar.
+    I picked my favourite name for the month.
+  </td>
 </tr>
 <tr>
-<td>
-<span class="zodiac_logo"></span> <span class="zodiac"></span>
-</td>
-<td>
-<a target="_blank" rel="noopener" href='https://en.wikipedia.org/wiki/Zodiac'> Tropical Zodiac</a>
-</td>
+  <td>
+    <span class='zodiac_logo'></span>
+    <span class='zodiac'></span>
+  </td>
+  <td>
+    <a href='https://en.wikipedia.org/wiki/Zodiac' target="_blank" rel="noopener">
+    Tropical Zodiac</a>
+  </td>
 </tr>
 <tr>
-<td>
-<span class="lunar_phase" style="white-space: nowrap;"></span>
-</td>
-<td>
-<a target="_blank" rel="noopener" href='https://en.wikipedia.org/wiki/Lunar_phase'> Lunar phase</a> (in
-northern hemisphere)
-</td>
+  <td>
+    <span class='lunar_phase' style='white-space: nowrap;'></span>
+  </td>
+  <td>
+    <a href='https://en.wikipedia.org/wiki/Lunar_phase' target="_blank" rel="noopener">
+    Lunar phase</a>
+    (in northern hemisphere)
+  </td>
 </tr>
 <tr>
-<td>
-<span class="pentad" style="white-space: nowrap;"></span>
-</td>
-<td>
-<a target="_blank" rel="noopener" href='https://en.wikipedia.org/wiki/Solar_term'> Solar Term</a> and
-Solar Pentad
-</td>
+  <td>
+    <span class='pentad' style='white-space: nowrap;'></span>
+  </td>
+  <td>
+    <a href='https://en.wikipedia.org/wiki/Solar_term' target="_blank" rel="noopener">
+    Solar Term</a> and Solar Pentad
+  </td>
 </tr>
 <tr>
-<td>
-<span class="count_nine" style="white-space: nowrap;"></span>
-</td>
-<td>
-<a target="_blank" rel="noopener" href='https://zh.wikipedia.org/wiki/%E6%95%B0%E4%B9%9D'>數九</a>，
-從冬至後逢「壬」日開始記 (counting the nine-day periods after the winter
-solstice)
-</td>
+  <td>
+    <span class='count_nine' style='white-space: nowrap;'></span>
+  </td>
+  <td>
+    <a href='https://zh.wikipedia.org/wiki/%E6%95%B0%E4%B9%9D' target="_blank" rel="noopener">數九</a>，
+    從冬至後逢「壬」日開始記
+    (counting the nine-day periods after the winter solstice)
+  </td>
 </tr>
 <tr>
-<td>
-<span class="time" style="white-space: nowrap;"></span>
-</td>
-<td>
-<p style="margin: unset">
-Time, where<span lang="ch">「午前」</span>means “before noon” and<span
-lang="ch">「午後」</span>means “after noon”
-</p>
-</td>
+  <td>
+    <span class='time' style='white-space: nowrap;'></span>
+  </td>
+  <td>
+    <p style='margin: unset'>
+    Time,
+    where<span lang='ch'>「午前」</span>means &ldquo;before noon&rdquo;
+    and<span lang='ch'>「午後」</span>means &ldquo;after noon&rdquo;
+    </p>
+  </td>
 </tr>
 </table>
-<p>Below is the same set of astronomical events at the moment of my
-birth.</p>
+<p>Below is the same set of astronomical events
+at the moment of my birth.</p>
 <!--
 date --date="1996-03-14T22:25+8" +%s
 826813500
 new Date(826813500*1000) // to miliseconds
 -->
 <div lang="ch">
-<p><span class="year" style="white-space: nowrap;">全新世紀元 11996
-年</span> <span class="month" style="white-space: nowrap;">弥生</span>
-<span class="day" style="white-space: nowrap;">14 日</span> <span
-style="white-space: nowrap;"> <span class="youbi_logo">V</span> <span
-class="youbi">木曜日</span> </span> <span style="white-space: nowrap;">
-<span class="cyear" style="white-space: nowrap;">丙子年</span> <span
-class="cmonth" style="white-space: nowrap;">端月</span> <span
-class="cday" style="white-space: nowrap;">25 日</span> </span> <span
-style="white-space: nowrap;"> <span class="zodiac_logo">L</span> <span
-class="zodiac">双魚宮</span> </span> <span class="lunar_phase"
-style="white-space: nowrap;">d</span> <span class="pentad"
-style="white-space: nowrap;">驚蟄 倉庚鳴</span> <span class="time"
-style="white-space: nowrap;">午後 10:25 (UTC+08:00)</span></p>
+  <span class='year'  style='white-space: nowrap;'>全新世紀元  11996 年</span>
+  <span class='month' style='white-space: nowrap;'>弥生</span>
+  <span class='day'   style='white-space: nowrap;'>14 日</span>
+  <span style='white-space: nowrap;'>
+    <span class='youbi_logo'>V</span>
+    <span class='youbi'>木曜日</span>
+  </span>
+  <span style='white-space: nowrap;'>
+    <span class='cyear'  style='white-space: nowrap;'>丙子年</span>
+    <span class='cmonth' style='white-space: nowrap;'>端月</span>
+    <span class='cday'   style='white-space: nowrap;'>25 日</span>
+  </span>
+  <span style='white-space: nowrap;'>
+    <span class='zodiac_logo'>L</span>
+    <span class='zodiac'>双魚宮</span>
+  </span>
+  <span class='lunar_phase' style='white-space: nowrap;'>d</span>
+  <span class='pentad' style='white-space: nowrap;'>驚蟄 倉庚鳴</span>
+  <span class='time' style='white-space: nowrap;'>午後 10:25 (UTC+08:00)</span>
 </div>
-</section>
-      </div>
-      <footer id="footer">
+
+          </main>
+        </div>
+        <footer id="footer">
   <div class="outer">
     <div id="footer-info" class="inner">
       <hr>
-      &copy; 2026
-      <a href="/">Ritsuka</a>
+      &copy; 2026 <a href="/">Ritsuka</a>
       <br>
-      Last modified: <span id="last-modified">
-        2026 Feb 27th
-      </span>
+      Last modified:
+      <time id="last-modified" datetime="2026-09-06">
+        2026 Sep 6th
+      </time>
       <br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="https://www.11ty.dev/" target="_blank" rel="noopener">Eleventy</a>
     </div>
   </div>
 </footer>
+
+      </div>
     </div>
-  </div>
-</body>
+  </body>
 </html>
