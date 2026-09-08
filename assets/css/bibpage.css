@@ -1,0 +1,82 @@
+h1.header {
+  margin-left: 8px;
+}
+
+.year {
+  font-size: 1.17em;
+  font-weight: bold;
+}
+
+.title {
+  font-weight: 700;
+}
+
+.me {
+  font-weight: bold;
+}
+
+a.btn {
+  display: inline-block;
+  white-space: nowrap;
+  font-size: 12px;
+  line-height: 1.5;
+  text-align: center;
+  vertical-align: middle;
+  padding: 1px 5px;
+  margin-bottom: 0;
+  border-radius: 3px;
+  border: 1px solid;
+  color: var(--link-color);
+  border-color: var(--link-color);
+  transition: all .5s;
+}
+
+a.btn:hover {
+  color: var(--text-color);
+  border-color: var(--link-color);
+  background-color: var(--link-color);
+}
+
+.bibtex_table {
+  border-collapse: collapse;
+}
+
+.bibtex_table p {
+  margin: 0;
+  /* Auto hyphenation does not work reliably inside this table. */
+  text-align: left;
+}
+
+.bibtex_display tr + tr td {
+  border-top: 1em solid transparent;
+}
+
+.bibtex_display td:first-child {
+  padding-right: 10px;
+  width: fit-content;
+  white-space: nowrap;
+}
+
+.bibtex_display td {
+  vertical-align: top;
+}
+
+.manu {
+  border-left: 12px solid var(--manu-bgcolor) !important;
+  padding-left: 10px;
+}
+
+.diss {
+  border-left: 12px solid var(--diss-bgcolor) !important;
+  padding-left: 10px;
+}
+
+.conf {
+  border-left: 12px solid var(--conf-bgcolor) !important;
+  padding-left: 10px;
+}
+
+.jour {
+  border-left: 12px solid var(--jour-bgcolor) !important;
+  padding-left: 10px;
+}
